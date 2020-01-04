@@ -1,0 +1,64 @@
+<div class="card my-3">
+  <div class="btn-group-vertical btn-block">
+    <!-- buton gruplarinin dikey olmasi -->
+    <div class="btn-group ">
+      <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">Category</button>
+      <div class="dropdown-menu btn-block btn-light   ">
+        <form action="{% url 'category' %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Action' ,
+            name="category">Action</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Animation' ,
+            name="category">Animation</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Comedy' ,
+            name='category'>Comedy</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Documentary' ,
+            name='category'>Documentary</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Family' ,
+            name='category'>Family</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Horror' ,
+            name='category'>Horror</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Romance' ,
+            name='category'>Romance</button>
+          <button class="btn btn-outline-dark btn-block" type="submit" , value='Sci-fi' ,
+            name='category'>Sci-Fi</button>
+        </form>
+      </div>
+    </div>
+    <div class="btn-group ">
+      <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">Year</button>
+      <div class="dropdown-menu btn-block btn-light ">
+        <form action="{% url 'category' %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2019' ,
+            name="category">2019</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2018' ,
+            name="category">2018</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2017' ,
+            name='category'>2017</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2016' ,
+            name='category'>2016</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2015' ,
+            name='category'>2015</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2014' ,
+            name='category'>2014</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2013' ,
+            name='category'>2013</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2012' ,
+            name='category'>2012</button>
+          <button class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2011' ,
+            name='category'>2011</button>
+          <button style="margin-bottom: 8px;" class="btn btn-sm btn-outline-dark btn-block" type="submit" , value='2010'
+            , name='category'>2010</button>
+        </form>
+        <a href="/movies/older/"><button class="btn btn-sm btn-outline-dark btn-block">Older Movies</button> </a>
+      </div>
+    </div>
+    <div class="btn-group ">
+      <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">IMDB</button>
+      <div class="dropdown-menu btn-block btn-light ">
+        <a href="/movies/imdb/"><button class="btn btn-sm btn-outline-dark btn-block">Imdb 7+</button> </a>
+      </div>
+    </div>
+  </div>
+</div>

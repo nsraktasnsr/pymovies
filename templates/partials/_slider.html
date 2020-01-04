@@ -1,0 +1,45 @@
+{% load static %}
+
+<!-- 1- asagida slider kodlari bulunmaktadir. bu sayfa "layout.html" sayfasina include edilmistir. 
+     2- slider in calismasi icin "movies" uygulamasinda "views.py" dosyasindaki "get_slider(context)" fonsiyonun calistirilmasi gerekmektedir
+        ornegin : pages uygulamasi altinda olusturulan "about.html" sayfasinda slideri gostermek istiyorsak
+                  oncelikle "pages.views.py" dosyasinda "from movies.views import get_slider" ile fonksiyonu
+                  import edip about(request) fonksiyonu icine asagidaki kodlari yazmak gerekiyor.
+
+                  not: sayfa fonksiyonunuz icinde herhangi bir "context" bilgisi yoksa asagidaki gibi bos bir "context" olusturulmali
+                
+                  from movies.views import get_slider
+                  
+                  def about(request):
+                      context = {}   
+                      get_slider(context)
+                      return render(request, 'pages/about.html',context)
+                        -->
+{% if slider_images %} 
+
+  <!-- Swiper -->
+  <div style="background-color: rgb(221, 238, 243); border: 1px solid rgb(153, 203, 216); border-radius:5px;" class="container">
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+        
+        {% for slider_image in slider_images %}
+          
+          <a class="swiper-slide" href="{% url 'detail' slider_image.id %}">
+            <img src="{% static slider_image.get_image_path %}" height="220" width="160" class="rounded">
+          <!--<div class="swiper-slide" style="background-image:url({% static slider_image.get_image_path %})">
+          </div> -->
+        </a>
+                   
+          <!-- <div class="swiper-slide" style="background-image:url({% static slider_image.get_image_path %})"></div> -->
+        {% endfor %}   
+       
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+  </div>
+{% endif %}

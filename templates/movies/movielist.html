@@ -1,0 +1,269 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .pagination {
+        text-align: center;
+        margin-top: 1em;
+        border-radius: 5px;
+        height: 50px;
+        width: 500px;
+        background-color: rgb(255, 255, 255);
+        margin-left: px;
+    }
+
+    .pagination-number {
+        padding: 0.7em 1.1em;
+        margin: 0 0.2em;
+        border-radius: 2px;
+        color: #fff;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .pagination-number:hover,
+    .pagination-current {
+        background-color: rgb(233, 223, 223);
+        color: black;
+    }
+
+    .pagination-action {
+        margin: 0 0.1em;
+        display: inline-block;
+        padding: 0.5em 0.5em;
+        color: rgb(7, 7, 7);
+        font-size: 1.3em;
+    }
+
+    .pagination-action:hover,
+    .pagination-previous,
+    .pagination-next {
+        color: rgb(233, 223, 223);
+    }
+</style>
+
+<div class="row" style="width: 100%;margin-left: 0;">
+    <div class="col-md-4" style="background-color:rgb(192, 225, 231);">
+        <div style="text-align: center;" class="dropdown">
+            <div class="btn-group">
+                <button type="button" class="btn btn-lg" data-toggle=dropdown>Category <span
+                        class="btn dropdown-toggle dropdown-toggle-split"></span></button>
+
+                <div style="background-color: rgb(101, 212, 207); border:1px solid black;"
+                    class="dropdown-menu">
+                    <form action="{% url 'category' %}" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Action' ,
+                            name="category">Action</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Animation' ,
+                            name="category">Animation</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Comedy' ,
+                            name='category'>Comedy</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Documentary' ,
+                            name='category'>Documentary</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Family' ,
+                            name='category'>Family</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Horror' ,
+                            name='category'>Horror</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Romance' ,
+                            name='category'>Romance</button>
+                        <button class="btn btn-outline-dark btn-block" type="submit" , value='Sci-fi' ,
+                            name='category'>Sci-Fi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="background-color:rgb(192, 225, 231);">
+        <div style="text-align: center;" class="dropdown">
+            <div class="btn-group">
+                <button type="button" class="btn btn-lg" data-toggle=dropdown>Year <span
+                        class="btn dropdown-toggle dropdown-toggle-split"></span></button>
+
+                <div style="background-color: rgb(101, 212, 207); border:1px solid black;"
+                    class="dropdown-menu">
+                    <form action="{% url 'category' %}" method="POST">
+                        {% csrf_token %}
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2019' , name="category">2019</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2018' , name="category">2018</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2017' , name='category'>2017</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2016' , name='category'>2016</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2015' , name='category'>2015</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2014' , name='category'>2014</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2013' , name='category'>2013</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2012' , name='category'>2012</button>
+                        <button style="margin-bottom: 0px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2011' , name='category'>2011</button>
+                        <button style="margin-bottom: 2px; margin-top:1px" class="btn btn-sm btn-outline-dark btn-block"
+                            type="submit" , value='2010' , name='category'>2010</button>
+                    </form>
+                    <a href="/movies/older/"><button class="btn btn-sm btn-outline-dark btn-block">Older Movies</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="background-color:rgb(192, 225, 231);">
+        <div style="text-align: center;" class="dropdown">
+            <div class="btn-group">
+                <button type="button" class="btn btn-lg" > <a href="/movies/imdb/"
+                        style="color: #070707;"> Imdb 7+ <span class="btn dropdown-toggle dropdown-toggle-split"></span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br>
+<div>
+
+    <div style="text-align: center;height:30px; padding-bottom:10px" class="row">
+        <div style="width: 800px; background-color:black; float:center; border-radius:50px;" class="container">
+            <h1 style="color:white; text-align:center;margin-top:10px">{{title}}</h1>
+            {% if 'imdb' in request.path %}
+            <h1 style="color:white; text-align:center;">Imdb 7+ Movies</h1> {% endif %}
+            {% if 'older' in request.path %}
+            <h1 style="color:white; text-align:center;">Older Movies</h1> {% endif %}
+        </div>
+    </div><br><br>
+    {% if movies %}
+    
+    <style>
+        .gallery {
+            position: relative;
+            width: 50%;
+        }
+    
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+    
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    
+        .gallery:hover .image {
+            opacity: 0.1;
+        }
+    
+        .gallery:hover .middle {
+            opacity: 1;
+        }
+    
+        .text {
+            color: white;
+            font-size: 16px;
+    
+        }
+    
+        li {
+            list-style: none;
+            font-size: 15px;
+        }
+    
+        li span {
+            color: chocolate
+        }
+    
+        
+    </style>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div style="float:left;padding-top:20px;padding-left:4px;max-width: 1050px; background: #070707; overflow: auto; border-radius:5px; display: flex; flex-flow: row wrap; justify-content:space-around"
+                class="container">
+                {% for movie in movies %}
+                <div class="col-xs-12 col-md-3 gallery">
+                    <a href="{% url 'detail' movie.id %}">
+                        <img style="height: 310px; width:100%;border-radius:5px;margin-bottom: 20px;"
+                            src="{% static movie.get_image_path %}" alt="Avatar" class="image" style="width:100%">
+    
+                        <div class="middle">
+                            <div class="text">
+                                <strong>{{movie.name}} </strong>
+                                <ul>
+                                    <li><span>Category:</span> {{movie.turu}}</li>
+                                    <li><span>Imbd:</span> {{movie.imdb}}</li>
+                                    <li><span>Year:</span> {{movie.yil}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                {% endfor %}
+            </div>
+        </div>
+    
+    
+        
+    </div>
+    {% endif %}
+</div>
+<div class="row">
+    <div class="pagination" style="background-color: rgb(232, 242, 243); height: 40px;">
+        {% if movies.has_previous %}
+        <a class="pagination-action" href="?page=1">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i> </a>
+        <a class="pagination-action" href="?page={{ movies.previous_page_number }}">
+            <i>Previous</i>
+        </a>
+        {% endif %}
+        {% for num in movies.paginator.page_range %}
+        {% if movies.number == num %}
+        <span class="pagination-number pagination-current">{{ num }}</span>
+        {% elif num > movies.number|add:'-3' and num < movies.number|add:'3' %}
+        <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if movies.has_next %}
+        <a class="pagination-action" href="?page={{ movies.next_page_number }}">
+            <i> Next</i>
+        </a>
+        <a class="pagination-action" href="?page={{ movies.paginator.num_pages }}">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

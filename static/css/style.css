@@ -1,0 +1,20 @@
+.footer {
+    background-color:rgba(2, 146, 194, 0.87);
+    color: white;
+
+}
+
+
+.search-bar {
+    max-width: 500px;
+    width: 100%;
+
+}
+
+img.pycoders-card{
+    width: 200px;
+    height: 75px;
+    position: relative;
+    right:0px;
+
+}

@@ -1,0 +1,30 @@
+<div class="publisher publisher-multi b-1 mb-30" style='background: rgb(232, 242, 243);'>
+  {% if request.user.is_authenticated%}
+  <form action="{% url 'addComment' %}" method="POST">
+    {% csrf_token %}
+    <label for="exampleFormControlSelect1"><h6>Rate</h6></label><br>
+      <div class="rate">
+        <input type="radio" id="star5" checked name="rating" value="5" />
+        <label for="star5" title="5">5 stars</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4" title="4">4 stars</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3" title="3">3 stars</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2" title="2">2 stars</label>
+        <input type="radio" id="star1"  name="rating" value="1" />
+        <label for="star1" title="1">1 star</label>
+      </div>      
+    <br><br><br>
+    <label for="exampleFormControlSelect1"><h6>Comment</h6></label>
+    <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <input type="text" name="movieid" style="display: none" value="{{movie.id}}">
+    <input type="text" name="userid" style="display: none" value="{{request.user.id}}">
+    <br>
+    <button  type="submit" class="btn btn-sm btn-bold btn-primary">Send Comment</button>
+  </form>
+  {%else%}
+  <p class="text-center">Please login to post a comment.</p><br>
+  <a class="btn btn-xs btn-round btn-success mr-2" href="/user/login/">Login</a>
+  {%endif%}
+</div>

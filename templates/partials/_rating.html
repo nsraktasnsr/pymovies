@@ -1,0 +1,62 @@
+
+<style>
+    
+    .fa-star{
+        color: #80808036;
+    }
+    #checked {
+        color: #ffc700;
+    }
+</style>
+{%if comment.rating == '1'%}
+
+<div class="rate">
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star "></span>
+    <span class="fa fa-star "></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+</div>
+{%endif%}
+
+{%if comment.rating == '2'%}
+<div class="rate">
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star "></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+</div>
+{%endif%}
+
+{%if comment.rating == '3'%}
+
+<div class="rate">
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+</div>
+{%endif%}
+
+{%if comment.rating == '4'%}
+
+<div class="rate">
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star"></span>
+</div>
+{%endif%}
+
+{%if comment.rating == '5'%}
+<div class="rate">
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star" id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+    <span class="fa fa-star " id="checked"></span>
+</div>
+{%endif%}

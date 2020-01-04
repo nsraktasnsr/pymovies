@@ -1,0 +1,59 @@
+{% load static %}
+{% load humanize %}
+
+
+<h4 class="card-title"><strong>Comments</strong> </h4>
+{% for comment in comments  %}
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-3">
+        <a class="avatar" href="#">
+          <img style="height: 20px;" src="{% static 'img/user.png' %}" alt="...">
+        </a>
+        {{comment.user}}
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3">
+        <footer style="float: right;" class="blockquote-footer">
+          {{comment.created_date | timesince }} ago
+          
+          {% if request.user.is_authenticated%}
+          {% if request.user == comment.user%}
+          <!-- Giris yapan kullanici sadece kendi yorumlarini silebilsin diye -->
+          <form action="{% url "delComment" %}" method="POST">
+            {% csrf_token %}
+            <input type="text" style="display: none;" name="commentid" value="{{comment.id}}">
+            <input type="text" style="display: none;" name="movieid" value="{{comment.movie_id}}"><br>
+            <button type="submit" class="btn btn-square btn-pure btn-sm btn-danger float-right"> X</button>
+          </form>
+          {%endif%}
+          {%endif%}
+        </footer>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+     <div class="row">
+       <div class="col-md-9">
+        <p><small>{{comment.comment}}</small></p>
+      
+       </div>
+
+       <div class="col-md-3">
+        <div style="float: right;">
+          {% include 'partials/_rating.html' %}
+        </div>
+       </div>
+     </div>
+
+    </blockquote>
+  </div>
+</div>
+<br>
+
+{% endfor %}

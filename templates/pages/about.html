@@ -1,0 +1,353 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .card {
+        background-color: rgb(232, 242, 243);
+
+    }
+
+    h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+</style>
+
+<div class="container" style="font-family: inherit; font-size:1.125rem;">
+    <div>
+        <img src="{% static 'img/ders2.jpg'%}" alt="" class="rounded mx-auto d-block img-fluid">
+    </div>
+    <br>
+    <hr>
+    <div class="text-justify" style="text-indent:50px">
+
+        <p>
+            This website, rather than being only a movie introduction, is a project that has been emerged by a group of
+            people consisting of various groups of jobs and making a new start to their life again as a refugee.
+
+            <!-- Bu web sayfasi sadece bir film tanitim sitesi olmaktan daha çok, 
+        farkli meslek gruplarindan mülteci olarak hayatina yeniden baslayan bir grup insanin 
+        6 aylik yazilim egitimi sonrasinda ortaya çikardiklari bir projedir. -->
+        </p>
+
+        <p>
+
+            This training activity was led off by software expert Fatih DEMIR, came to here as a refugee, too in 2018,
+            and
+            by his idea to help people around like him.
+            Mr. DEMIR, who intended to convey his knowledge to people,
+            started a volunteer training activity.
+            Firstly, he gave Python, Kivi, Django trainings to a group at 20 persons during 6 months.
+            Those were the first seeds that provided a team, <a target="_blank" href="https://www.pycoders.nl/"> >>>Py[Coders] </a> to be formed.
+            Then, a new course was started with the ones who wanted to be volunteer trainers among the trained
+            20 trainees and a new group of 44 trainees.
+
+
+            <!-- Eylül 2018 yilinda yine mülteci olarak gelen Fatih beyin etrafindaki kendi 
+        gibi olan insanlara yardim etme düsüncesiyle basladi. IPN vakfi catisi altinda bilgi 
+        birikimlerini insanlara ulastirmak isteyen fatih bey, gönüllü bir egitim faaliyeti baslatti. 
+        öncelikle 20 kisilik bir gruba 6 ay boyunca Python, Kivi, Django egitimleri verdi. 
+        Bunlar topraga düsen ilk tohumlar oldu ve Py[Coders] grubu kuruldu. Daha sonra bu 20 kisi içinde 
+        gönüllü olanlarla beraber 44 kisilik bir gruba egitime baslandi. -->
+        </p>
+
+
+        <p>
+            Here is the we are the ones included in this second group. Hence, this website is our groduation
+            project. This project that we did as a team of 10 persons, has been prepared by using django library.
+            Further more, we had no software experiance and education before we came here.
+            This web site is a concrate example illustrating our motivation and resoluteness to continue our career
+            at software sector hereafter.
+
+
+            <!-- iste bizler bu ikinci grup egitime dahil olanlariz. bu web sayfasi bizim mezuniyet projemizdir. 
+        10 kisilik bir takim halinde yaptigimiz bu proje django kütüphanesi kullanilarak hazirlanmistir. 
+        Bizlerin daha önceki hayatlarimizda herhangi bir yazilim tecrübesi ve egitimi bulunmamaktadir. 
+        geldigimiz bu noktada bu web sayfasi kariyerimize yazilim sektöründe devam etmek için motivasyonumuzu 
+        ve azmimizi gösteren somut bir örnektir.-->
+        </p>
+
+        <p>
+
+            We thank ever so much to primary Mr.DEMIR, volunteers trainers, <a target="_blank" href="https://www.stichtingipn.nl/">Stichting IPN</a>
+            , <a target="_blank" href="https://www.hetmml.nl/index.php">Metis Montessori Lyceum</a>
+            and all who had great effort in this training activity which is a new hope and a fresh start for us.
+
+            <!-- Bizim için yeni bir ümit ve baslangiç olan bu egitim faaliyetinde emegi geçen başta fatih bey olmak uzere, 
+        gonullu ogretmenlerimize, IPN vakfina ve emegi gecen herkese çok tesekkür ederiz.-->
+        </p>
+
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="text-align: center;">
+        <h1> Director </h1>
+        <hr>
+        <div class="row row-cols-1 row-cols-md-4" style="text-align: center;">
+            <div class="col mb-4" style="text-align: center;">
+                <div class="card border-0">
+                    <img src="{% static 'img/erkek_avatar.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Fatih DEMIR</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/pycoders-nl" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/fatih-demir-4b9a16169/" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div S>
+    <hr>
+    <br>
+    <div>
+        <h1> Mentors </h1>
+        <hr>
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/semih_kocakel.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Semih Kochakel</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/sigma21" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/semih-kochakel" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/bayan-avatar.jpg' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Beyzanur KARAMAN</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/beyzanour" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/beyzanur-karaman-8bb623189/" target="_blank"><img src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/huzeyfe_eroglu.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ali Huzeyfe EROGLU</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/hzyfPy" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/ali-huzeyfe-eroglu-719317180" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/irfan_karadeniz.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Irfan KARADENIZ</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/irfankaradeniz" target="_blank"><img
+                                src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/irfan-karadeniz-a342a0113" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/aysegul_cayir.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Aysegul C. AYDAR</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/aysegulcayir" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/aysegul-cayir-aydar-a74459185/" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/yavuz_koksal.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Yavuz KOKSAL</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/dadasyvz" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/yavuz-koksal-75a50450" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <hr>
+    <br>
+
+
+
+    <div>
+        <h1> Project Team </h1>
+        <hr>
+
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/ensar_baltas.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ensar BALTAS</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ensarbaltas" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/ensar-baltaş-317176147 " target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/emine_sernur.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Emine S. YILDIRIM</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/esernur" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/esernur" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/esra_tepebasi.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Esra TEPEBASI</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/esratpb" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/esra-tepebasi" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/ilhami_yildirim.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ilhami YILDIRIM</h5>
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ilhami3455" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/ilhami-yildirim" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/zeyd_ustaoglu.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Zeyd USTAOGLU</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/zeydustaoglu" target="_blank"><img
+                                src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/zeyd-ustaoglu-101179187/" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/emine_tuba.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Emine Tuba ISTEMIL</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/eminetuba" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/emine-tuba-istemil-753839189" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/emrullah_gulcan.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Emrullah Gulcan</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/emrullahgulcan" target="_blank"><img src="{% static 'img/github.png'%}" alt=""></a>
+                        <a href="https://linkedin.com/in/emrullah-gülcan-9a2188189" target="_blank"><img src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/emrah_uz.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Emrah UZ</h5>
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/emrahuz" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/emrah-uz-1b2031188" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/erkek_avatar.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ramazan AKTAS</h5>
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/nsraktasnsr" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/ramazan-aktas-59817619b/" target="_blank"><img src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/ibrahim_firat.jfif' %}" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ibrahim FIRAT</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ifirat" target="_blank"><img src="{% static 'img/github.png'%}"
+                                alt=""></a>
+                        <a href="https://linkedin.com/in/ibrahim-f-246032188" target="_blank"><img
+                                src="{% static 'img/linkedin.png'%}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

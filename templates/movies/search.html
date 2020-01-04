@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% if movies %}
+<div style="max-width: 1050px; margin: auto; background: #070707; overflow: auto; border-radius:20px; display: flex; flex-flow: row wrap; justify-content:space-around" class="container" >
+    {% for movie in movies  %}
+        <div style="padding:1px; margin:35px; border:1px solid rgb(12, 12, 12); float:left; width: 265px; height: 450px; text-align: center; 
+        background-color:#dfeef5; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;" class="gallery">
+            <a href="{% url 'detail' movie.id %}">
+            <img style="width:260px; height:330px; overflow:auto;" src="{% static movie.get_image_path %}" alt="">
+            <div style="padding-top: 8px; text-align:center;" class="desc"> <h6><ins>{{movie.name}}</ins></h6> </div></a>
+            <div class="col-md-12" style="height: 40px; background-color: #dfeef5; float:left; border-top-left-radius:20px; border-top-right-radius:20px;"><p style="color: rgb(5, 5, 5); font-family:cursive;">{{movie.turu}}</p></div>
+            <div class="col-md-5" style=" height: 20px; background-color: #dfeef5; float:left; border-bottom-left-radius:20px;border-bottom-right-radius:20px;"><p style="color: rgb(0, 0, 0); font-family:cursive;">Year: {{movie.yil}}</p></div>
+            <div class="col-md-5" style="height: 20px; background-color: #dfeef5; float:right; border-bottom-right-radius:20px;border-bottom-left-radius:20px;"><p style="color: rgb(5, 5, 5); font-family:cursive;">Imdb: {{movie.imdb}}</p></div>
+        </div>      
+    {% endfor %}
+{% else %}
+    <div class="alert alert-warning">
+        No Movies
+    </div>
+</div> 
+{% endif %}  
+{% endblock content %}

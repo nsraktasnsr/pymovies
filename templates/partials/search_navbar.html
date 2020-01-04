@@ -1,0 +1,17 @@
+<header>
+    <div class="navbar navbar-expand-sm  navbar-dark " style="background-color:rgba(2, 146, 194, 0.11);">
+        <!-- SEARCH BOLUMU -->
+        <div class="row" style="width: 100%; height:">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <form class="form-inline mr-auto" action="{% url 'search' %}" method="get">
+                    <input type="text" class="form-control" name="q" id="id_q" placeholder="Movie Name or Content"
+                        value="{{query}}">
+                    <button style="margin-left: 10px;background-color: rgba(2, 146, 194, 0.87)" type="submit"
+                        class="btn btn-bold btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+        <!-- SEARCH BOLUMU SONU-->
+    </div>
+</header>
